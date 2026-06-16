@@ -12,11 +12,12 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", form);
+      await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/signup`, form);
       alert("Signup successful");
       router.push("/login");
     } catch (err) {
-      alert(err.response.data.msg);
+      console.log(err);
+      // alert(err.response.data.msg);
     }
   };
 
