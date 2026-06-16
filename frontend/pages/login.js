@@ -18,6 +18,7 @@ export default function Login() {
       alert("Login successful");
       router.push("/");
     } catch (err) {
+      console.log(err.response);
       alert(err.response.data.msg);
     }
   };
