@@ -12,7 +12,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/signup`, form);
+      await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/signup`, form);
       alert("Signup successful");
       router.push("/login");
     } catch (err) {
